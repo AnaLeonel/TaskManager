@@ -33,7 +33,7 @@ namespace TaskManager.Controllers.Task
         // criar novo ticket (GET)
         public ActionResult Create()
         {
-            return View();
+            return View(new TaskViewModel());
         }
 
         // criar novo ticket (POST)

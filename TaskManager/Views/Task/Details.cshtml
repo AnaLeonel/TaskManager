@@ -1,0 +1,13 @@
+﻿@model TaskManager.Models.Task.TaskViewModel
+@{
+    ViewBag.Title = "Detalhes do Ticket";
+}
+<h2>Detalhes do Ticket</h2>
+<div>
+    <h4>@Model.Title</h4>
+    <p>@Model.Description</p>
+    <p>Prioridade: @Model.Priority</p>
+    <p>Status: @Model.Status</p>
+    <p>Data de Abertura: @Model.DateOpened.ToShortDateString()</p>
+</div>
+<a href="@Url.Action("Index")" class="btn btn-secondary">Voltar</a>
