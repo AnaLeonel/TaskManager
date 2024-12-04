@@ -18,12 +18,17 @@
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Priority)
-        @Html.DropDownListFor(m => m.Priority, new SelectList(new[] { "Baixa", "Média", "Alta" }), "Selecione", new { @class = "form-control" })
+        @Html.DropDownListFor(m => m.Priority,
+            new SelectList(new[] { "Baixa", "Média", "Alta" }),
+            new { @class = "form-control" })
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Status)
-        @Html.DropDownListFor(m => m.Status, new SelectList(new[] { "Aberto", "Em Andamento", "Fechado" }), "Selecione", new { @class = "form-control" })
+        @Html.DropDownListFor(m => m.Status,
+            new SelectList(new[] { "Aberto", "Em Andamento", "Fechado" }),
+            new { @class = "form-control" })
     </div>
+
     <button type="submit" class="btn btn-success">Salvar</button>
     <a href="@Url.Action("Index", "Tickets")" class="btn btn-secondary">Cancelar</a>
 }

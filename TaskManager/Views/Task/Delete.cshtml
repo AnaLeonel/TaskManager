@@ -1,0 +1,23 @@
+﻿@model TaskManager.Models.Task.TaskViewModel
+
+@{
+    ViewBag.Title = "Deletar Ticket";
+}
+
+<h2>Deletar Ticket</h2>
+<p>Tem certeza de que deseja excluir o ticket abaixo?</p>
+
+<div>
+    <h4>@Model.Title</h4>
+    <p>@Model.Description</p>
+    <p>Prioridade: @Model.Priority</p>
+    <p>Status: @Model.Status</p>
+    <p>Data de Abertura: @Model.DateOpened.ToShortDateString()</p>
+</div>
+
+@using (Html.BeginForm("DeleteConfirmed", "Task", FormMethod.Post))
+{
+    @Html.HiddenFor(m => m.Id)
+    <button type="submit" class="btn btn-danger">Excluir</button>
+    <a href="@Url.Action("Index", "Task")" class="btn btn-secondary">Cancelar</a>
+}
